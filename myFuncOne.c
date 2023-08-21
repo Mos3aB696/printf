@@ -16,12 +16,12 @@ int print_c(va_list val)
 }
 
 /**
- * printf_s - print a string
+ * print_s - print a string
  * @val: argument
  *
  * Return: length of string
  */
-int printf_s(va_list val)
+int print_s(va_list val)
 {
 	char *str;
 	int i, len;
@@ -46,12 +46,12 @@ int printf_s(va_list val)
 }
 
 /**
- * printf_int - print integer
+ * print_int - print integer
  * @val: value to print
  *
  * Return: i
  */
-int printf_int(va_list val)
+int print_int(va_list val)
 {
 	int n = va_arg(val, int);
 	int number = _abs(n);

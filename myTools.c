@@ -21,9 +21,9 @@ int _putchar(char c)
  */
 int _abs(int num)
 {
-	if (n > 0)
-		return (n);
-	else if (n < 0)
+	if (num > 0)
+		return (num);
+	else if (num < 0)
 		return (-num);
 	else
 		return (0);
@@ -37,12 +37,12 @@ int _abs(int num)
 
 int str_len(char *s)
 {
-	int l;
+	int i;
 
-	for (l = 0; s[l] != 0; l++)
+	for (i = 0; s[i] != '\0'; i++)
 		;
 
-	return (l);
+	return (i);
 }
 
 /**
@@ -55,7 +55,7 @@ int str_lenc(const char *s)
 {
 	int i;
 
-	for (i = 0; s[i] != 0; i++)
+	for (i = 0; s[i] != '\0'; i++)
 		;
 	return (i);
 }
