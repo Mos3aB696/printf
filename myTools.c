@@ -12,3 +12,19 @@ int _putchar(char c)
 {
 	return (write(1, &c, 1));
 }
+
+/**
+ * _abs - absoute value of an integer
+ * @num: the Number
+ *
+ * Return: 0
+*/
+int _abs(int num)
+{
+	if (n > 0)
+		return (n);
+	else if (n < 0)
+		return (-num);
+	else
+		return (0);
+}

@@ -23,50 +23,52 @@ int print_c(va_list val)
  */
 int printf_s(va_list val)
 {
-	char *s;
+	char *str;
 	int i, len;
 
-	s = va_arg(val, char *);
-	if (s == NULL)
+	str = va_arg(val, char *);
+	if (str == NULL)
 	{
-		s = "(null)";
-		len = _strlen(s);
+		str = "(null)";
+		len = str_len(str);
 
 		for (i = 0; i < len; i++)
-			_putchar(s[i]);
+			_putchar(str[i]);
 		return (len);
 	}
 	else
 	{
-		len = _strlen(s);
+		len = str_len(str);
 		for (i = 0; i < len; i++)
-			_putchar(s[i]);
+			_putchar(str[i]);
 		return (len);
 	}
 }
 
 /**
- * _slength - return length of string
+ * str_len - return length of string
  * @s: string
  *
  * Return: length
  */
 
-int _slength(char *s)
+int str_len(char *s)
 {
 	int l;
 
 	for (l = 0; s[l] != 0; l++)
-		return (l);
+		;
+
+	return (l);
 }
 
 /**
- * _slengthc - slength function for constant string
+ * str_lenc - str_len function for constant string
  * @s: string
  *
  * Return: length
  */
-int _slengthc(const char *s)
+int str_lenc(const char *s)
 {
 	int i;
 
@@ -77,45 +79,119 @@ int _slengthc(const char *s)
 
 /**
  * printf_i - print integer
- * @arg: argument to print
+ * @val: value to print
  *
- * Return: numbers of characters
+ * Return: i
  */
-int printf_i(va_list arg)
+int printf_i(va_list val)
 {
-	int n = va_arg(arg, int);
-	int number, lastDigit = n % 10, digit, exp = 1;
+	int n = va_arg(val, int);
+	int number = _abs(n);
+	int lastDigit = n % 10;
+	int digit, exp = 1;
 	int i = 1;
 
-	n = n / 10;
-	number = n;
+	while ((number / 10) != 0)
+	{
+		exp *= 10;
+		number /= 10;
+	}
 
-	if (lastDigit < 0)
+	if (n < 0)
 	{
 		_putchar('-');
-		number = -number;
-		n = -n;
-		lastDigit = -lastDigit;
 		i++;
 	}
-	if (number > 0)
+	number = n;
+
+	while (exp > 0)
 	{
-		while (number / 10 != 0)
-		{
-			exp = exp * 10;
-			number = number / 10;
-		}
-		number = n;
-		while (exp > 0)
-		{
-			digit = number / exp;
-			_putchar(digit + '0');
-			number = number - (digit * exp);
-			exp = exp / 10;
-			i++;
-		}
+		digit = number / exp;
+		_putchar(digit + '0');
+		number -= digit * exp;
+		exp /= 10;
+		i++;
 	}
 	_putchar(lastDigit + '0');
 
+	return (i);
+}
+/**
+ * printf_int - print integer
+ * @val: value to print
+ *
+ * Return: i
+ */
+int printf_int(va_list val)
+{
+	int n = va_arg(val, int);
+	int number = _abs(n);
+	int lastDigit = n % 10;
+	int digit, exp = 1;
+	int i = 1;
+
+	while ((number / 10) != 0)
+	{
+		exp *= 10;
+		number /= 10;
+	}
+
+	if (n < 0)
+	{
+		_putchar('-');
+		i++;
+	}
+	number = n;
+
+	while (exp > 0)
+	{
+		digit = number / exp;
+		_putchar(digit + '0');
+		number -= digit * exp;
+		exp /= 10;
+		i++;
+	}
+	_putchar(lastDigit + '0');
+
+	return (i);
+}
+
+/**
+ * print_dec - print decimal
+ * val: value to print
+ *
+ * Return: i
+ */
+
+int print_dec(va_list val)
+{
+	int n = va_arg(val, int);
+	int number = _abs(n);
+	int lastDigit = n % 10;
+	int digit, exp = 1;
+	int i = 1;
+
+	while ((number / 10) != 0)
+	{
+		exp *= 10;
+		number /= 10;
+	}
+
+	if (n < 0)
+	{
+		_putchar('-');
+		i++
+	}
+	number = n;
+
+	while (exp > 0)
+	{
+		digit = number / exp;
+		_putchar(digit + '0');
+		number -= digit * exp;
+		exp /= 10;
+		i++;
+	}
+	_putchar(lastDigit + '0');
 	return (i);
 }

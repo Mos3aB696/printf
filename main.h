@@ -19,9 +19,12 @@ int _putchar(char c);
 int _printf(const char *format, ...);
 int print_c(va_list val);
 int printf_s(va_list val);
-int _slength(char *s);
-int _slengthc(const char *s);
-int printf_i(va_list arg);
+int str_len(char *s);
+int str_lenc(const char *s);
+int printf_int(va_list arg);
+int _abs(int num);
+int print_dec(va_list val)
+
 
 
 #endif
