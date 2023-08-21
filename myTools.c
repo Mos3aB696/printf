@@ -18,7 +18,7 @@ int _putchar(char c)
  * @num: the Number
  *
  * Return: 0
-*/
+ */
 int _abs(int num)
 {
 	if (n > 0)
@@ -27,4 +27,35 @@ int _abs(int num)
 		return (-num);
 	else
 		return (0);
+}
+/**
+ * str_len - return length of string
+ * @s: string
+ *
+ * Return: length
+ */
+
+int str_len(char *s)
+{
+	int l;
+
+	for (l = 0; s[l] != 0; l++)
+		;
+
+	return (l);
+}
+
+/**
+ * str_lenc - str_len function for constant string
+ * @s: string
+ *
+ * Return: length
+ */
+int str_lenc(const char *s)
+{
+	int i;
+
+	for (i = 0; s[i] != 0; i++)
+		;
+	return (i);
 }
