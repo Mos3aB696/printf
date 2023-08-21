@@ -54,34 +54,38 @@ int print_s(va_list val)
 int print_int(va_list val)
 {
 	int n = va_arg(val, int);
-	int number = _abs(n);
-	int lastDigit = n % 10;
-	int digit, exp = 1;
-	int i = 1;
+	int num, l_dig = n % 10, dig;
+	int i = 1, exp = 1;
 
-	while ((number / 10) != 0)
-	{
-		exp *= 10;
-		number /= 10;
-	}
+	n = n / 10;
+	num = n;
 
-	if (n < 0)
+	if (l_dig < 0)
 	{
 		_putchar('-');
+		num = -num;
+		n = -n;
+		l_dig = -l_dig;
 		i++;
 	}
-	number = n;
-
-	while (exp > 0)
+	if (num > 0)
 	{
-		digit = number / exp;
-		_putchar(digit + '0');
-		number -= digit * exp;
-		exp /= 10;
-		i++;
+		while ((num / 10) != 0)
+		{
+			exp *= 10;
+			num /= 10;
+		}
+		num = n;
+		while (exp > 0)
+		{
+			dig = num / exp;
+			_putchar(dig + '0');
+			num -= dig * exp;
+			exp /= 10;
+			i++;
+		}
 	}
-	_putchar(lastDigit + '0');
-
+	_putchar(l_dig + '0');
 	return (i);
 }
 
@@ -95,39 +99,43 @@ int print_int(va_list val)
 int print_dec(va_list val)
 {
 	int n = va_arg(val, int);
-	int number = _abs(n);
-	int lastDigit = n % 10;
-	int digit, exp = 1;
-	int i = 1;
+	int num, l_dig = n % 10, dig;
+	int i = 1, exp = 1;
 
-	while ((number / 10) != 0)
-	{
-		exp *= 10;
-		number /= 10;
-	}
+	n = n / 10;
+	num = n;
 
-	if (n < 0)
+	if (l_dig < 0)
 	{
-		_putchar('-');
+		num = -num;
+		n = -n;
+		l_dig = -l_dig;
 		i++;
 	}
-	number = n;
-
-	while (exp > 0)
+	if (num > 0)
 	{
-		digit = number / exp;
-		_putchar(digit + '0');
-		number -= digit * exp;
-		exp /= 10;
-		i++;
+		while ((num / 10) != 0)
+		{
+			exp *= 10;
+			num /= 10;
+		}
+		num = n;
+		while (exp > 0)
+		{
+			dig = num / exp;
+			_putchar(dig + '0');
+			num -= dig * exp;
+			exp /= 10;
+			i++;
+		}
 	}
-	_putchar(lastDigit + '0');
+	_putchar(l_dig + '0');
 	return (i);
 }
 /**
  * print_percentage - print %
  * Return: 1
-*/
+ */
 
 int print_percentage(void)
 {
