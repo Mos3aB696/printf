@@ -29,7 +29,4 @@ int _abs(int num);
 int print_dec(va_list val);
 int print_percentage(void);
 
-
-
-
 #endif
