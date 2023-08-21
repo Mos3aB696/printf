@@ -5,12 +5,10 @@
 #include <stdarg.h>
 #include <unistd.h>
 
-
 /**
  * struct format - match the conversion specifires for printf
  * @c: type char pointer of the specifier
  * @f: type pointer to function
- *
  */
 
 typedef struct format
@@ -29,10 +27,4 @@ int print_int(va_list arg);
 int _abs(int num);
 int print_dec(va_list val);
 int print_percentage(void);
-
-<<<<<<< HEAD
-=======
-
-
->>>>>>> f32cc00 (adding library)
 #endif
