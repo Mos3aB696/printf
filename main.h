@@ -24,7 +24,7 @@ int str_lenc(const char *s);
 int printf_int(va_list arg);
 int _abs(int num);
 int print_dec(va_list val);
-int print_percentage(void)
+int print_percentage(void);
 
 
 
