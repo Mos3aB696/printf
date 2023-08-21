@@ -6,6 +6,9 @@
 #include <unistd.h>
 
 /**
+ * struct format - match the conversion specifires for printf
+ * @c: type char pointer of the specifier
+ * @f: type pointer to function
  *
  */
 
