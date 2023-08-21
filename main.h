@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <stdarg.h>
 #include <unistd.h>
-#include <stdio.h>
+
 
 /**
  * struct format - match the conversion specifires for printf
@@ -30,4 +30,9 @@ int _abs(int num);
 int print_dec(va_list val);
 int print_percentage(void);
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> f32cc00 (adding library)
 #endif
