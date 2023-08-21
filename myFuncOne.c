@@ -107,6 +107,7 @@ int print_dec(va_list val)
 
 	if (l_dig < 0)
 	{
+		_putchar('-');
 		num = -num;
 		n = -n;
 		l_dig = -l_dig;
